@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: eclipse-che
+
+generatorOptions:
+  disableNameSuffixHash: true
+  annotations:
+    che.eclipse.org/mount-as: subpath
+    che.eclipse.org/mount-path: /public/dashboard/assets/branding
+  labels:
+    app.kubernetes.io/component: che-dashboard-secret
+    app.kubernetes.io/part-of: che.eclipse.org
+
+secretGenerator:
+  - name: che-dashboard-branding-logo
+    type: Opaque
+    files:
+      - che-logo.svg=./che-logo.svg

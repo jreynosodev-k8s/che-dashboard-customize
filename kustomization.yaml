@@ -5,7 +5,7 @@ namespace: eclipse-che
 
 resources:
   - ./01-che-dashboard-branding-meta
-  - ./02-che-branding-favicon
+  - ./02-che-dashboard-branding-favicon
   - ./03-che-dashboard-loader-image
   - ./04-che-dashboard-branding-logo
 
